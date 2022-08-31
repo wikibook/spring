@@ -1,0 +1,15 @@
+<hr>
+<!-- 13：참조(List) -->
+<span th:text="${list[0]}">방위</span>
+<span th:text="${list[1]}">방위</span>
+<span th:text="${list[2]}">방위</span>
+<span th:text="${list[3]}">방위</span> <br>
+<!-- 14：참조(Map)-->
+.로 접근:<span th:text="${map.hong.name}">이름 1</span> -
+<span th:text="${map.lee.name}">이름 2</span> <br>
+[]로 접근:<span th:text="${map['hong']['name']}">이름 1</span> -
+<span th:text="${map['lee']['name']}">이름 2</span>
+<!-- 15 : 반복 -->
+<div th:each="member : ${members}">
+   <p>[[${member.id}]] : [[${member.name}]]</p>
+</div>

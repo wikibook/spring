@@ -1,0 +1,2 @@
+# 커스텀 밸리데이션용
+com.example.demo.validator.CalcValidator.message=왼쪽에는 홀수를 오른쪽에는 짝수를 입력해주세요.

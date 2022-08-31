@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th ="http://www.thymeleaf.org">
+<head>
+   <meta charset="UTF-8">
+   <title>URL 경로에 포함된 값과 클릭된 버튼 식별 </title>
+</head>
+<body>
+<div>
+   <!-- URL에 값넣기 -->
+   <h3><a th:href="@{/function/1}">기능-1</a></h3>
+   <h3><a th:href="@{/function/2}">기능-2</a></h3>
+   <h3><a th:href="@{/function/3}">기능-3</a></h3>
+   <!-- 같은 form태그안에 복수 버튼  -->
+   <form th:action="@{/send}" method="post">
+       <input type="submit" value="버튼A" name="a">
+       <input type="submit" value="버튼B" name="b">
+       <input type="submit" value="버튼C" name="c">
+   </form>
+</div>
+</body>
+</html>

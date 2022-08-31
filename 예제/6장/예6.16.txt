@@ -1,0 +1,5 @@
+<!-- 14：참조(Map)-->
+<p th:text="${map.kim.name}">이름 1</p>
+<p th:text="${map.lee.name}">이름 2</p>
+<p th:text="${map['kim']['name']}">이름 1 : []로 접속</p>
+<p th:text="${map['lee']['name']}">이름 2 : []로 접속</p>

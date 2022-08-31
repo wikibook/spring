@@ -1,0 +1,8 @@
+<!-- 17: 유틸리티 오브젝트(숫자) -->
+<div th:with="x=1000000, y=123456.789">
+    정수 형식:
+      <span th:text="${#numbers.formatInteger(x, 3, 'COMMA')}"></span>
+       <br/>
+    부동 소수점 형식:
+        <span th:text="${#numbers.formatDecimal(y, 3, 'COMMA', 2,'POINT')}"></span>
+</div>

@@ -1,0 +1,5 @@
+<!-- 13：참조(List) -->
+<p th:text="${list[0]}">방위</p>
+<p th:text="${list[1]}">방위</p>
+<p th:text="${list[2]}">방위</p>
+<p th:text="${list[3]}">방위</p>

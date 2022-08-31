@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th ="http://www.thymeleaf.org">
+<head>
+   <meta charset="UTF-8">
+   <title>입력 화면</title>
+</head>
+<body>
+<form th:action="@{/confirm}" method="post">
+   <div>
+       <label for="name">이름:</label>
+       <input type="text" name="name">
+   </div>
+   <div>
+       <label for="age">나이:</label>
+       <input type="number" name="age" min="1" max="100">
+   </div>
+   <div>
+       <label for="birth">생년월일:</label>
+       <input type="date" name="birth">
+   </div>
+   <input type="submit" value="전송">
+</form>
+</body>
+</html>

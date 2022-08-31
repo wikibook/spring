@@ -1,0 +1,19 @@
+//    /** 확인 화면을 표시 */
+//    @PostMapping("confirm")
+//    public String confirmView(
+//            Model model, @RequestParam String name, @RequestParam Integer age,
+//            @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) @RequestParam LocalDate birth
+//    ) {
+//        // Model에 저장
+//        model.addAttribute("name",name);
+//        model.addAttribute("age",age);
+//        model.addAttribute("birth",birth);
+//        // 반환 값은 뷰 명을 돌려줌
+//        return "confirm";
+//    }
+   /** 확인 화면을 표시:Form 클래스용 */
+   @PostMapping("confirm")
+   public String confirmView(Form f) {
+   // 반환 값은 뷰 명을 돌려줌
+       return "confirm2";
+   } 

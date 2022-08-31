@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+ <meta charset="UTF-8">
+ <title>OX 퀴즈 애플리케이션:CRUD</title>
+</head>
+<body>
+<h1>OX 퀴즈 애플리케이션:CRUD</h1>
+<h3 th:text="${title}">제목</h3>
+ <!--/* 등록/변경완료 메시지 */-->
+<p th:if="${complete}" th:text="${complete}" style="color:blue"></p>
+<!--/* ▼▼▼ Form ▼▼▼ */→
+\
+<form method="POST"
+     th:action="${quizForm.newQuiz}? @{/quiz/insert} : @{/quiz/update}"
+     th:object="${quizForm}">
+   <label>퀴즈 내용: </label><br>
+   <textarea rows="5" cols="50" th:field="*{question}"></textarea>
+   <br>
+   <div th:if="${#fields.hasErrors('question')}" th:errors="*{question}"
+      style="color:red"></div>
+   <label>퀴즈 정답: </label><br>
+   <input type="radio" value="true" th:field="*{answer}" > O
+   <input type="radio" value="false" th:field="*{answer}" > X
+   <br>
+   <div th:if="${#fields.hasErrors('answer')}" th:errors="*{answer}"
+      style="color:red"></div>
+   <label>작성자: </label><br>
+   <input type="text" th:field="*{author}" />
+   <br>
+   <div th:if="${#fields.hasErrors('author')}" th:errors="*{author}"
+      style="color:red"></div>
+   <input th:if="${id}" type="hidden" th:field="*{id}" >
+   <input type="submit" value="송신">
+</form>
+<!--/* △△△ Form △△△ */-->
+<br>
+<!--/* ========== 여기까지가 상부 영역 ========== */-->
+<hr>
+<!--/* ========== 여기서부터 하부 영역 ========== */-->
+<!--/* ▼▼▼ 신규 등록할 때만 표시 ▼▼▼ */-->
+<div th:if="${quizForm.newQuiz}" style="margin: 10px">
+   <h3>등록된 퀴즈 목록 <a th:href="@{/quiz/play}">플레이</a><br></h3>
+   <!--/* 삭제 완료 메시지 */-->
+   <p th:if="${delcomplete}" th:text="${delcomplete}" style="color:blue"></p>
+   <p th:if="${msg}" th:text="${msg}" style="color:red"></p>
+   <!--/* ▼▼▼ 퀴즈 정보가 있으면 표시 ▼▼▼ */-->
+   <table border="1" th:unless="${#lists.isEmpty(list)}"
+        style="table-layout: fixed;">
+       <tr>
+           <th>ID</th>
+           <th>내용</th>
+           <th>해답</th>
+           <th>작성자</th>
+           <th>변경</th>
+           <th>삭제</th>
+       </tr>
+       <tr th:each="obj : ${list}" align="center">
+           <td th:text="${obj.id}"></td>
+           <td th:text="${obj.question}" align="left"></td>
+           <td th:text="${obj.answer} == true?'O':'X'"></td>
+           <td th:text="${obj.author}"></td>
+           <!--/* 변경 버튼 */-->
+           <td>
+               <form method="GET" th:action="@{/quiz/{id}(id=${obj.id})}">
+                 <input type="submit" value="변경">
+               </form>
+           </td>
+           <!--/* 삭제 버튼 */-->
+           <td>
+               <form method="POST" th:action="@{/quiz/delete}">
+                   <input type="hidden" name="id" th:value="${obj.id}">
+                   <input type="submit" value="삭제">
+               </form>
+           </td>
+       </tr>
+   </table>
+   <!--/* △△△ 퀴즈 정보가 있으면 표시 △△△ */-->
+   <!--/* ▼▼▼ 퀴즈 정보가 없으면 표시 ▼▼▼ */-->
+   <p th:if="${#lists.isEmpty(list)}">등록된 퀴즈가 없습니다.</p>
+   <!--/* △△△ 퀴즈 정보가 없으면 표시 △△△ */-->
+</div>
+<!--/* △△△ 신규 등록할 때만 표시 △△△ */-->
+<!--/* ▼▼▼ 신규 등록이 아닐때 표시 ▼▼▼ */-->
+<p th:unless="${quizForm.newQuiz}">
+ <a href="#" th:href="@{/quiz}">CRUD 화면에 돌아가기</a>
+</p>
+<!--/* △△△ 신규 등록이 아닐때 표시 △△△ */-->
+</body>
+</html>

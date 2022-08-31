@@ -1,0 +1,9 @@
+/** 실행 메소드 */
+private void execute() {
+  // 등록 처리
+  //setup(); <- 코멘트 아웃
+  // 전건 취득
+  //showList(); <- 코멘트 아웃
+  // 1건 취득
+  showOne();
+}

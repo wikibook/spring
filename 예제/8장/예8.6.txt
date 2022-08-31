@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html xmlns:th ="http://www.thymeleaf.org">
+<head>
+   <meta charset="UTF-8">
+   <title>확인 화면</title>
+</head>
+<body>
+   <h2>계산 결과</h2>
+   <h3>[[${calcForm.leftNum}]]+[[${calcForm.rightNum}]]=[[${result}]]</h3>
+</body>
+</html>

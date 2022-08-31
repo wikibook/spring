@@ -1,0 +1,96 @@
+package com.example.quiz;
+
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import com.example.quiz.entity.Quiz;
+import com.example.quiz.repository.QuizRepository;
+
+@SpringBootApplication
+public class QuizApplication {
+	/** 기동메소드 */
+	public static void main(String[] args) {
+		SpringApplication.run(QuizApplication.class, args)
+				.getBean(QuizApplication.class).execute();
+	}
+	/** 주입 */
+	@Autowired
+	QuizRepository repository;
+	/** 실행 메소드 */
+	private void execute() {
+		// 등록
+		//setup();
+		// 전건 취득
+		//showList();
+		// 한건 취득
+		//showOne();
+		// 변경 처리
+		//updateQuiz(); ←　코멘트 아웃
+		// 삭제 처리
+		deleteQuiz();
+	}
+
+	/** === 퀴즈 2건을 등록합니다 === */
+	private void setup() {
+		// 엔티티 생성
+		Quiz quiz1 = new Quiz(null, " Spring은 프레임워크입니까?", true, "홍길동");
+		// 등록 실행
+		quiz1 = repository.save(quiz1);
+		// 등록 확인
+		System.out.println("등록한 퀴즈는," + quiz1 + " 입니다");
+
+		// 엔티티 생성
+		Quiz quiz2 = new Quiz(null, "Spring MVC는 배치처리를 제공합니까?", false, "홍길동");
+		// 등록 실행
+		quiz2 = repository.save(quiz2);
+		// 등록 확인
+		System.out.println("등록한 퀴즈는," + quiz2 + " 입니다");
+	}
+	
+	/** === 모든 데이터 취득 === */
+	private void showList() {
+		System.out.println("--- 모든 데이터 취득 개시 ---");
+		// 리포지토리를 이용해서 모든 데이터를 취득해서 결과를 반납
+		Iterable<Quiz> quizzes= repository.findAll();
+		for (Quiz quiz : quizzes) {
+		System.out.println(quiz);
+		}
+		System.out.println("--- 모든 데이터 취득 완료 ---");
+	}
+
+	private void showOne() {
+		System.out.println("--- １건 취득 개시 ---");
+		// 리포지토리를 사용해서 1건의 데이터를 취득해서 결과를 반납(반납값은 Optional)
+		Optional<Quiz> quizOpt = repository.findById(1);
+		// 반환값이 있는지 확인
+		if (quizOpt.isPresent()) {
+		System.out.println(quizOpt.get());
+		} else {
+		System.out.println("해당 데이터는 존재하지 않습니다.");
+		}
+		System.out.println("--- １건 취득 완료 ---");
+	}
+
+	/** === 변경 처리 === */
+	private void updateQuiz() {
+		System.out.println("--- 변경 처리 개시 ---");
+		// 변경할 엔티티를 생성
+		Quiz quiz1 = new Quiz(1,"스프링은 프레임워크입니까? ", true, "변경 담당");
+		// 변경 처리
+		quiz1 = repository.save(quiz1);
+		// 변경 결과 확인
+		System.out.println("변경된 데이터는 " + quiz1 + " 입니다.");
+		System.out.println("--- 변경 처리 완료 ---");
+	}
+
+	/** === 삭제 처리 === */
+	private void deleteQuiz() {
+		System.out.println("--- 삭제 처리 개시 ---");
+		// 삭제 실행
+		repository.deleteById(2);
+		System.out.println("--- 삭제 처리 완료 ---");
+	} 
+}

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th ="http://www.thymeleaf.org"
+     xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+     layout:decorate="~{commons/layout}">
+<head>
+ <meta charset="UTF-8">
+ <title>페이지 A</title>
+</head>
+<body>
+ <!-- 대체되는 내용-->
+ <div layout:fragment="content">
+   <h1>PageA</h1>
+ </div>
+</body>
+</html>

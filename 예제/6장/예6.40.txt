@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+     xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+   <meta charset="UTF-8">
+   <title>베이스: 레이아웃</title>
+</head>
+<body>
+   <!-- 공통 머리글 -->
+   <header>
+       <div align="center">
+           <h1>공통 머리글</h1>
+       </div>
+       <hr />
+   </header>
+   <!-- 대체 위치 -->
+   <div layout:fragment="content" align="center">
+       여기를 대체함
+   </div>
+   <!-- 공통 바닥글 -->
+   <footer>
+       <hr />
+       <div align="center">
+           <h1>공통 바닥글</h1>
+       </div>
+   </footer>
+</body>
+</html>

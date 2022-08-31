@@ -1,0 +1,10 @@
+/** === 모든 데이터 취득 === */
+private void showList() {
+  System.out.println("--- 모든 데이터 취득 개시 ---");
+  // 리포지토리를 이용해서 모든 데이터를 취득해서 결과를 반납
+  Iterable<Quiz> quizzes= repository.findAll();
+  for (Quiz quiz : quizzes) {
+     System.out.println(quiz);
+  }
+  System.out.println("--- 모든 데이터 취득 완료 ---");
+}

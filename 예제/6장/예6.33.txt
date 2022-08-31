@@ -1,0 +1,10 @@
+@GetMapping("show")
+public String showView(Model model) {
+   // Member를 작성
+   Member member = new Member(1, "회원01");
+   // Model에 데이터 추가
+   model.addAttribute("name", "이순신");
+   model.addAttribute("mb",member);
+   // 반환값으로 뷰 명을 설정
+   return "useThymeleaf";
+}

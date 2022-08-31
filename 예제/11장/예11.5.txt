@@ -1,0 +1,2 @@
+DELETE FROM quiz;
+SELECT setval('quiz_id_seq', 1, false);

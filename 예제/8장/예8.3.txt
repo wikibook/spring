@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th ="http://www.thymeleaf.org">
+<head>
+   <meta charset="UTF-8">
+   <title>입력 화면</title>
+</head>
+<body>
+<form th:action="@{/calc}" method="post" th:object="${calcForm}">
+   <div>
+       <input type="text" th:field="*{leftNum}">
+       +
+       <input type="text" th:field="*{rightNum}">
+   </div>
+   <input type="submit" value="계산">
+</form>
+</body>
+</html>

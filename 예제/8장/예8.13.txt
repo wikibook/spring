@@ -1,0 +1,8 @@
+/** 주입(인젝션) */
+@Autowired
+CalcValidator calcValidator;
+/** 커스텀 밸리데이션 등록 */
+@InitBinder("calcForm")
+public void initBinder(WebDataBinder webDataBinder){
+   webDataBinder.addValidators(calcValidator);
+}

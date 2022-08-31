@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th ="http://www.thymeleaf.org">
+<head>
+ <meta charset="UTF-8">
+ <title>확인 화면</title>
+</head>
+<body>
+   <ul>
+       <li>이름　　: [[${name}]] </li>
+       <li>나이　　: [[${age}]] </li>
+       <li>생년월일: [[${birth}]]</li>
+   </ul>
+</body>
+</html>

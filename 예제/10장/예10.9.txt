@@ -1,0 +1,11 @@
+/** === 변경 처리 === */
+private void updateQuiz() {
+  System.out.println("--- 변경 처리 개시 ---");
+  // 변경할 엔티티를 생성
+  Quiz quiz1 = new Quiz(1,"스프링은 프레임워크입니까? ", true, "변경 담당");
+  // 변경 처리
+  quiz1 = repository.save(quiz1);
+  // 변경 결과 확인
+  System.out.println("변경된 데이터는 " + quiz1 + " 입니다.");
+  System.out.println("--- 변경 처리 완료 ---");
+}

@@ -1,0 +1,9 @@
+@GetMapping("show")
+public String showView(Model model) {
+  
+   // Model에 데이터 추가
+   model.addAttribute("name", "이순신");
+  
+   // 반환값으로 뷰 명을 설정
+   return "useThymeleaf";
+}

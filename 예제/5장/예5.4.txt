@@ -1,0 +1,5 @@
+// value 속성만이라면 생략 가능합니다
+@GetMapping("hello")
+
+// 복수의 URL지정이 가능합니다.
+@GetMapping(value = { "hello", "hellospring" })

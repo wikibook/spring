@@ -1,0 +1,11 @@
+/** id를 Key로 데이터를 삭제함 */
+@PostMapping("/delete")
+public String delete(
+       @RequestParam("id") String id,
+       Model model,
+       RedirectAttributes redirectAttributes) {
+   //퀴즈 정보를 1건 삭제하고 리다이렉트
+   service.deleteQuizById(Integer.parseInt(id));
+   redirectAttributes.addFlashAttribute("delcomplete", "삭제 완료했습니다");
+   return "redirect:/quiz";
+}

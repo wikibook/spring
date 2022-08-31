@@ -1,0 +1,20 @@
+<hr>
+<!-- 10：switch -->
+<div th:switch="${name}">
+   <p th:case="이순신" th:text="|${name}입니다!|"></p>
+   <p th:case="순자" th:text="|${name}입니다!|"></p>
+   <p th:case="명자" th:text="|${name}입니다!|"></p>
+   <p th:case="*">명부에 없습니다</p>
+</div>
+<!-- 11：참조(데이터를 결합한 객체) -->
+.로 접근:<span th:text="${mb.id}">ID</span> -
+<span th:text="${mb.name}">이름</span><br>
+[]로 접근:<span th:text="${mb['id']}">ID</span> -
+<span th:text="${mb['name']}">이름</span> <br>
+<!-- 12：참조(th:object) -->
+<th:block th:object="${mb}">
+   .로 접근:<span th:text="*{id}">ID</span> -
+   <span th:text="*{name}">이름</span><br>
+   []로 접근:<span th:text="*{id}">ID</span> -
+   <span th:text="*{['name']}">이름</span>
+</th:block>

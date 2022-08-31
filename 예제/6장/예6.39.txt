@@ -1,0 +1,4 @@
+<!-- 18: 프래그먼트 사용하기-->
+<h1>Fragment를 아래에 삽입하기</h1>
+<div id="one" th:insert="fragment :: one"></div>
+<div id="three" th:replace="fragment :: three"></div

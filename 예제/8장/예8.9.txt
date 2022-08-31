@@ -1,0 +1,5 @@
+# 단일 항목 체크용 메시지
+javax.validation.constraints.NotNull.message={0}이 미입력입니다
+org.hibernate.validator.constraints.Range.message={0}는{min}~{max}의 범위에서 입력해주세요!
+# 형변환 체크용 메시지
+typeMismatch.java.lang.Integer={0}는 정수를 입력해주세요.

@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="UTF-8">
+ <title>a</title>
+</head>
+<body>
+ <h1>버튼 A클릭 화면</h1>
+</body>
+</html>

@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<!-- Thymeleaf의 사용을 선언 -->
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+   <meta charset="UTF-8">
+   <title>Hello Thymeleaf </title>
+</head>
+<body>
+   <!-- 추가 -->
+   <h1 th:text="${msg}">표시되는 부분</h1>
+</body>
+</html>

@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+   <meta charset="UTF-8">
+   <title>fragment</title>
+</head>
+<body>
+   <!-- 18:프래그먼트를 정의-->
+   <span th:fragment="one">하나</span>
+   <span th:fragment="two">둘</span>
+   <span th:fragment="three">셋</span>
+</body>
+</html>

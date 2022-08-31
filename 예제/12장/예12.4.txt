@@ -1,0 +1,19 @@
+/** Quiz 데이터를 1건 등록 */
+@PostMapping("/insert")
+public String insert(@Validated QuizForm quizForm, BindingResult bindingResult,
+                    Model model, RedirectAttributes redirectAttributes) {
+   // Form에서 Entity로 넣기
+   Quiz quiz = new Quiz();
+   quiz.setQuestion(quizForm.getQuestion());
+   quiz.setAnswer(quizForm.getAnswer());
+   quiz.setAuthor(quizForm.getAuthor());
+   // 입력 체크
+   if (!bindingResult.hasErrors()) {
+       service.insertQuiz(quiz);
+       redirectAttributes.addFlashAttribute("complete", "등록이 완료되었습니다");
+       return "redirect:/quiz";
+   } else {
+       // 에러가 발생한 경우에는 목록 표시로 변경
+       return showList(quizForm, model);
+   }
+}

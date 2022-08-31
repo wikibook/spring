@@ -1,0 +1,29 @@
+/** Quiz 데이터를 랜덤으로 한건 취득해서 화면에 표시*/
+@GetMapping("/play")
+public String showQuiz(QuizForm quizForm, Model model) {
+   //Quiz정보 취득(Optional으로 랩핑)
+   Optional<Quiz> quizOpt = service.selectOneRandomQuiz();
+   // 값이 있는지 확인
+   if(quizOpt.isPresent()) {
+       // QuizForm으로 채우기
+       Optional<QuizForm> quizFormOpt = quizOpt.map(t -> makeQuizForm(t));
+       quizForm = quizFormOpt.get();
+   } else {
+       model.addAttribute("msg", "등록된 문제가 없습니다");
+       return "play";
+   }
+   // 표시용 Model에 저장
+   model.addAttribute("quizForm", quizForm);
+   return "play";
+}
+/** 퀴즈의 정답/오답의 판단 */
+@PostMapping("/check")
+public String checkQuiz(QuizForm quizForm, @RequestParam Boolean answer, Model
+       model){
+   if (service.checkQuiz(quizForm.getId(), answer)) {
+       model.addAttribute("msg","정답입니다.");
+   } else {
+       model.addAttribute("msg","오답입니다.");
+   }
+   return "answer";
+}

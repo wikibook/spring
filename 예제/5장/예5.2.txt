@@ -1,0 +1,8 @@
+// value 속성에 처리 대상의 URL패스를 매핑
+@RequestMapping(value = "hello")
+
+// value 속성만 지정하는경우 생략가능합니다.
+@RequestMapping("hello")
+
+// 복수의 URL 패스 지정이 가능합니다
+@RequestMapping(value = { "hello", "hellospring" }) 

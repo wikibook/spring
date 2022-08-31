@@ -1,0 +1,13 @@
+	/** 実行メソッド */
+	private void execute() {
+		// 登録
+		//setup();
+		// 全件取得
+		//showList();
+		// 1件取得
+		//showOne();
+		// 更新処理
+		//updateQuiz(); ←　コメントアウトする
+		// 削除処理
+		deleteQuiz();
+	}

@@ -1,0 +1,7 @@
+<!-- 12：참조(th:object) -->
+<div th:object="${mb}">
+    <p th:text="*{id}">ID</p>
+    <p th:text="*{name}">이름</p>
+    <p th:text="*{['id']}">ID: []로 접속</p>
+    <p th:text="*{['name']}">이름: []로 접속</p>
+</div>

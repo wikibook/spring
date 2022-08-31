@@ -1,0 +1,6 @@
+<!-- 17: 유틸리티 오브젝트(문자열) -->
+<div th:with="str1='abcdef'">
+    대문자 변환:<span th:text="${#strings.toUpperCase(str1)}"></span><br/>
+    공문자 판정:<span th:text="${#strings.isEmpty(str1)}"></span><br/>
+    길이: <span th:text="${#strings.length(str1)}"></span><br/>
+</div>

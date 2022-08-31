@@ -1,0 +1,2 @@
+@Query("SELECT id FROM quiz ORDER BY RANDOM() limit 1")
+Integer getRandomId();

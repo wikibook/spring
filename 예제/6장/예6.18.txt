@@ -1,0 +1,10 @@
+<!-- 16 :  반복 상태-->
+<div th:each="member, s : ${members}" th:object="${member}">
+    <p>
+        index-> [[${s.index}]], count-> [[${s.count}]],
+        size-> [[${s.size}]], current-> [[${s.current}]],
+        even-> [[${s.even}]], odd-> [[${s.odd}]],
+        first-> [[${s.first}]], last-> [[${s.last}]],
+        [[*{id}]] : [[*{name}]]
+    </p>
+</div>

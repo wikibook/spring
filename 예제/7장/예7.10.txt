@@ -1,0 +1,19 @@
+/** 링크 처리 */
+@GetMapping("/function/{no}")
+public String selectFunction(@PathVariable Integer no) {
+// 뷰명 초기화
+   String view = null;
+   switch (no) {
+       case 1:
+           view = "pathvaliable/function1";
+           break;
+       case 2:
+           view = "pathvaliable/function2";
+           break;
+       case 3:
+           view = "pathvaliable/function3";
+           break;
+   }
+   // 반환 값으로 뷰 명
+   return view;
+} 

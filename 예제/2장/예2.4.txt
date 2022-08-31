@@ -1,0 +1,18 @@
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class ListExercise {
+    public static void main(String[] args) {
+        // String형을 저장하기 위해서 List를 준비
+        List<String> names = new ArrayList<>();
+        // String형 데이터를 넣기
+        names.add("홍길동");
+        names.add("김선비");
+        names.add("James");
+        // for문으로 데이터를 하나씩 출력하기
+        for (String name : names) {
+            System.out.println(name);
+        }
+    }
+}

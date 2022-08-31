@@ -1,0 +1,5 @@
+<!-- 11：참조(데이터를 결합한 객체) -->
+<p th:text="${mb.id}">ID</p>
+<p th:text="${mb.name}">이름</p>
+<p th:text="${mb['id']}">ID: []로 접속</p>
+<p th:text="${mb['name']}">이름: []로 접속</p>

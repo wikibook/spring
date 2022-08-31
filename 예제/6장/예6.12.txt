@@ -1,0 +1,7 @@
+<!-- 10：switch -->
+<div th:switch="${name}">
+    <p th:case="길동" th:text="|${name}입니다!|"></p>
+    <p th:case="순자" th:text="|${name}입니다!|"></p>
+    <p th:case="명자" th:text="|${name}입니다!|"></p>
+    <p th:case="*">명부에 없습니다</p>
+</div>

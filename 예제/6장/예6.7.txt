@@ -1,0 +1,4 @@
+<!-- 05:지역 변수-->
+<div th:with="a=1,b=2">
+    <span th:text="|${a} + ${b} = ${a+b}|"></span>
+</div>

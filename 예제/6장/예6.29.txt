@@ -1,0 +1,16 @@
+<hr>
+<!-- 04:값 결합(리터럴 치환) -->
+<h1 th:text="|안녕하세요 ${name}씨|">표시하는 부분</h1>
+<!-- 05：지역 변수-->
+<div th:with="a=1,b=2">
+   <span th:text="|${a} + ${b} = ${a+b}|"></span>
+</div>
+<!-- 06:비교와 등가 -->
+<span th:text="1 > 10"></span>
+<span th:text="1 < 10"></span>
+<span th:text="1 >= 10"></span>
+<span th:text="1 <= 10"></span>
+<span th:text="1 == 10"></span>
+<span th:text="1 != 10"></span>
+<span th:text="길동 == 길동"></span>
+<span th:text="길동 != 길동"></span>

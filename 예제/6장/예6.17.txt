@@ -1,0 +1,4 @@
+<!-- 15 : 반복 -->
+<div th:each="member : ${members}">
+    <p>[[${member.id}]] : [[${member.name}]]</p>
+</div>

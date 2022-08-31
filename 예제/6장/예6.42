@@ -1,0 +1,4 @@
+@GetMapping("a")
+public String showA() {
+   return "pageA";
+}

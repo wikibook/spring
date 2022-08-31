@@ -1,0 +1,12 @@
+private void showOne() {
+  System.out.println("--- １건 취득 개시 ---");
+  // 리포지토리를 사용해서 1건의 데이터를 취득해서 결과를 반납(반납값은 Optional)
+  Optional<Quiz> quizOpt = repository.findById(1);
+  // 반환값이 있는지 확인
+  if (quizOpt.isPresent()) {
+     System.out.println(quizOpt.get());
+  } else {
+     System.out.println("해당 데이터는 존재하지 않습니다.");
+  }
+  System.out.println("--- １건 취득 완료 ---");
+}
