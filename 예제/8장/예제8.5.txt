@@ -1,0 +1,4 @@
+<!-- 에러 표시 -->
+<ul th:if="${#fields.hasErrors('*')}">
+    <li th:each="err:${#fields.errors('*')}" th:text="${err}"></li>
+</ul>

@@ -1,0 +1,7 @@
+/** === 삭제 처리 === */
+private void deleteQuiz() {
+    System.out.println("--- 삭제 처리 개시 ---");
+    // 삭제 실행
+    repository.deleteById(2);
+    System.out.println("--- 삭제 처리 완료 ---");
+}

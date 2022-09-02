@@ -1,0 +1,9 @@
+/** 주입(인젝션) */
+@Autowired
+CalcValidator calcValidator;
+
+/** 커스텀 유효성 검사기 등록 */
+@InitBinder("calcForm")
+public void initBinder(WebDataBinder webDataBinder){
+    webDataBinder.addValidators(calcValidator);
+}

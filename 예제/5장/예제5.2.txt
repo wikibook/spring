@@ -1,0 +1,8 @@
+// value 속성에 처리 대상의 URL 경로를 매핑
+@RequestMapping(value = "hello")
+
+// value 속성만 지정하는 경우 생략 가능
+@RequestMapping("hello")
+
+// URL 경로를 여러 개 지정 가능
+@RequestMapping(value = { "hello", "hellospring" }) 

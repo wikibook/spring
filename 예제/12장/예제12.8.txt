@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>OX 퀴즈 애플리케이션 : 해답</title>
+</head>
+<body>
+<h1>OX 퀴즈 애플리케이션 : 해답</h1>
+<h2 th:text="${msg}" style="color:red">메시지 표시 영역</h2>
+<a th:href="@{/quiz/play}">리플레이</a><br>
+<a th:href="@{/quiz}">CRUD 화면에 돌아가기</a>
+</body>
+</html>

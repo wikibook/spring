@@ -1,0 +1,5 @@
+// value 속성만이라면 생략 가능합니다.
+@PostMapping("hello")
+
+// URL을 여러 개 지정할 수 있습니다.
+@PostMapping(value = { "hello", "hellospring" })

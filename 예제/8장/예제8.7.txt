@@ -1,0 +1,6 @@
+# entry 화면용
+title.entry=입력 화면
+button.send=계산
+# CalcForm용
+calcForm.leftNum=왼쪽
+calcForm.rightNum=오른쪽

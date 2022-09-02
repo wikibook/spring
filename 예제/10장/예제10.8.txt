@@ -1,0 +1,9 @@
+/** 실행 메서드 */
+private void execute() {
+    // 등록 처리
+    //setup(); <- 주석 처리
+    // 전체 항목 취득
+    //showList(); <- 주석 처리
+    // 1건 취득
+    showOne();
+}
